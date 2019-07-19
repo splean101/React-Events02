@@ -20,15 +20,15 @@ class AnimationText extends React.Component {
     }
     render() {
         return (
-            <> 
-            <div style={this.state}> {this.props.text} </div>
-            <button type='button' onClick={this.red}>red</button>
-            <button type='button' onClick={this.green}>green</button>
-            <button type='button' onClick={this.blue}>blue</button>
+            <>
+                <div style={this.state}> {this.props.text} </div>
+                <button type='button' onClick={this.red}>red</button>
+                <button type='button' onClick={this.green}>green</button>
+                <button type='button' onClick={this.blue}>blue</button>
             </>
         )
     }
 };
 
-ReactDOM.render(<AnimationText text='AnimationText'/>,
+ReactDOM.render(<AnimationText text='AnimationText' />,
     document.getElementById('div1'))
