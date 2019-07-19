@@ -4,26 +4,31 @@ import ReactDOM from 'react-dom';
 class AnimationText extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { num: 0 };
-        this.plus = this.plus.bind(this);
-        this.minus = this.minus.bind(this);
+        this.state = { color: 'black' };
+        this.red = this.red.bind(this);
+        this.green = this.green.bind(this);
+        this.blue = this.blue.bind(this);
     }
-    plus() {
-        this.setState((prevState) => ({ num: ++prevState.num }));
+    red() {
+        this.setState({ color: 'red' });
     }
-    minus() {
-        this.setState((prevState) => ({ num: --prevState.num }));
+    green() {
+        this.setState({ color: 'green' });
+    }
+    blue() {
+        this.setState({ color: 'blue' });
     }
     render() {
         return (
             <> 
-            <button type='button' onClick={this.minus}>-</button>
-            <b> {this.state.num} </b>
-            <button type='button' onClick={this.plus}>+</button>
+            <div style={this.state}> {this.props.text} </div>
+            <button type='button' onClick={this.red}>red</button>
+            <button type='button' onClick={this.green}>green</button>
+            <button type='button' onClick={this.blue}>blue</button>
             </>
         )
     }
 };
 
-ReactDOM.render(<AnimationText />,
+ReactDOM.render(<AnimationText text='AnimationText'/>,
     document.getElementById('div1'))
